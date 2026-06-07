@@ -8,6 +8,7 @@
       "version": "0.0.1"
     },
     "title": "{{appTitle}}",
+    "subTitle": "{{appSubTitle}}",
     "description": "{{appDescription}}",
     "resources": "resources.json",
     "sourceTemplate": {
@@ -117,7 +118,30 @@
           "options": {
             "settings": {
               "contextPath": "/Travel",
-              "variantManagement": "Page",
+              "variantManagement": "Control",
+              "views": {
+                "paths": [
+                  
+                  {
+                    "key": "tab2",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#SPV_All"
+                  },
+                  {
+                    "key": "tab1",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#SV_Open"
+                  },
+                  {
+                    "key": "tab3",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#SPV_Accepted"
+                  },
+                  {
+                    "key": "tab4",
+                    "entitySet": "travel_chart",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#SVA_All"
+                  }
+                ],
+                "showCounts": true
+              },
               "navigation": {
                 "Travel": {
                   "detail": {
@@ -128,7 +152,22 @@
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
-                    "type": "ResponsiveTable"
+                    "type": "ResponsiveTable",
+                    "quickVariantSelection#commented": {
+                      "paths": [
+                        {
+                          "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#All"
+                        },
+                        {
+                          "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Open"
+                        },
+                        {
+                          "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Accepted"
+                        }
+                      ],
+                      "hideTableTitle": true,
+                      "showCounts": true
+                    }
                   }
                 }
               }
